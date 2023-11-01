@@ -4,13 +4,21 @@ import plotly.express as px
 from shapely.geometry import Polygon
 import h3
 from geojson import Feature, Point, FeatureCollection
+import os
+
+def open_file(file_name):
+  script_dir = os.path.dirname(os.path.abspath(__file__))
+  file_path = os.path.join(script_dir, file_name)
+  with open(file_path, 'r', encoding="utf8") as file:
+    content = file.read()
+  return (file_path, content)
 
 def load_data():
-    df = pd.DataFrame({})
-    for year in range(2000, 2024, 2):
-      df_year = pd.read_csv(f'./data/birds/{year}-{year+1}.csv')
-      df = pd.concat([df, df_year])
-    return df
+  df = pd.DataFrame({})
+  for year in range(2000, 2024, 2):
+    df_year = pd.read_csv(f'../../data/birds/{year}-{year+1}.csv')
+    df = pd.concat([df, df_year])
+  return df
 
 def plot_observation_count(data: pd.DataFrame, category: str = 'all'):
   if category != 'all':
