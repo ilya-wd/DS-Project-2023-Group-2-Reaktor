@@ -31,13 +31,13 @@ def plot_observation_count(data: pd.DataFrame, category: str = 'all'):
                     yaxis_title='Observations')
   return fig
 
-def plot_observation_municipality(data: pd.DataFrame, category: str = 'all'):
-  if category != 'all':
-    data = data[data['ScientificName'] == category]
+def plot_observation_municipality(data: pd.DataFrame, year: str = 'all'):
+  if year != 'all':
+    data = data[data['Year'] == year]
 
   mun_count = data['Municipality'].value_counts().head(10)
   fig = px.bar(x=mun_count.index, y=mun_count.values)
-  fig.update_layout(title=f'Top 10 municipality for {category}',
+  fig.update_layout(title=f'Top 10 municipality of {year} for birds',
                     xaxis_title='Municipality',
                     yaxis_title='Observations')
   return fig

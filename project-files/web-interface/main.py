@@ -23,7 +23,11 @@ tab2.header("Line graph")
 tab2._html(open_file("./precomp_data/observation_count.html")[1], height=500)
 
 tab2.header("Bar graph")
-tab2._html(open_file("./precomp_data/observation_muni.html")[1], height=500)
+option = tab2.selectbox(
+      'Year selection',
+      tuple(['all'] + list(range(2000, 2024))), 
+      key=1)
+tab2._html(open_file(f"./precomp_data/observation_muni/{option}.html")[1], height=500)
 
 tab2.header("Map")
 tab2._html(open_file("./precomp_data/grid_map.html")[1], height=800, width=1000)
