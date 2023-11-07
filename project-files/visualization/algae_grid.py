@@ -1,8 +1,10 @@
 import h3
 import pandas as pd
 import numpy as np
+import sys
+sys.path.append('../')
 from helper_functions.gridding import h3_grid
-from web-interface.func_import import plot_grid_map, load_geojson
+from web_interface.func_import import plot_grid_map, load_geojson
 
 df = pd.read_excel("fucusvesiculosus.xlsx", usecols=["Species", "WGS84 N", "WGS84 E"]).dropna()
 df = df.rename(columns={"WGS84 N": "Longitude", "WGS84 E": "Latitude"})
