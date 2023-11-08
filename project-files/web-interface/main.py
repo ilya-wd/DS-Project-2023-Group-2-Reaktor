@@ -30,4 +30,4 @@ option = tab2.selectbox(
 tab2._html(open_file(f"./precomp_data/observation_muni/{option}.html")[1], height=500)
 
 tab2.header("Map")
-tab2._html(open_file("./precomp_data/grid_map.html")[1], height=800, width=1000)
+tab2._html(open_file("./precomp_data/grid_map.html")[1], height=800, width=1000) 
