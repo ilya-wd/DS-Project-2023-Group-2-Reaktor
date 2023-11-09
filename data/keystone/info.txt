@@ -1,18 +1,15 @@
 We are mapping:
 
-1. Populus Tremora (aspen, haapa) with 18k observations (downloaded from 16.7.2016 til today). More data available if needed
+1. Populus Tremula (aspen, haapa) with 18k observations (downloaded from 16.7.2016 til today). More data available if needed
 This has real potential to display biodiversity increase; BUT; it is found almost everywhere so hard to utilize.
-If this does not work, I have another idea. We could have a biodiversdity map WITH POPULUS TREMORA and a predicted map
-WITHOUT POPULUS TREMORA. For example, we could predict that without Populus Tremola, 50 species would disappear from that hexagon.
+If this does not work, I have another idea. We could have a biodiversdity map WITH POPULUS TREMULA and a predicted map
+WITHOUT POPULUS TREMULA. For example, we could predict that without Populus Tremula, 50 species would disappear from that hexagon.
 
 2. Perisoreus Infaustius (siberian jay, a bird) with 19k observations (donwloaded from 2.1.2014 til today). More data available if needed
-We will have to see how helpful this data is.
+We will have to see how helpful this data is. Likes to live in old forests which should have high biodiversity.
 
 3. Ranunculus Glacialis (a type of flower, jääleinikki) with 0.7k observations. All observations downloaded.
 Mostly found in the north. Has potential to display biodiversity in northern Lapland.
 
 4. Zostera Marina (a type of algae, meriajokas) with 2.2k observations. All observations downloaded.
 This is found on the southern marine regions (especially Turku) which should also have high biodiversity.
-
-5. Perisoreus Infaustus (a bird, kuukkeli) with 6.5k observations (downloaded from 2.1.2021 til today). More data available.
-Likes to live in old forests which should have high biodiversity. We will just have to plot the data and see.
