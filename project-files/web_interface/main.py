@@ -58,9 +58,8 @@ exp1.markdown("""
 
 exp2 = tab4.expander("Correlation")
 exp2.markdown("""
-      - There are different types of relationships between species: parasitic, symbiosis, and predatory. Except for predatory relationship 
-      which is quite hard to obtain from mere observations, parasitic and symbiosis correlations are discussed in more detail in Correlation tab.
-      We estimate these relationships based on the count of species in a given area.
+      - There are different types of relationships between species: parasitic, symbiosis, and predatory. These correlations 
+      are discussed in more detail in Correlation tab. We estimate these relationships based on the count of species in a given area.
       - As we only have a limited number of species and observations, we also provide a prediction map (inferential map/...) to predict
       biodiversity for the whole map. We use Bayesian/MaxEnt model to perform this inferential process.
             """)
