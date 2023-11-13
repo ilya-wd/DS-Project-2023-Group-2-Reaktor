@@ -32,8 +32,7 @@ def render(file_path, title, text, plot, key, file_name: str = "download.csv"):
             year = str(col2.slider("Year slider", 2000, 2008, 2000))
             col1._html(
                 open_file(f"./precomp_data/grid_map/butterfly_{year}.html")[1],
-                width=1200,
                 height=800,
             )
         else:
-            components.html(plot, width=1340, height=500)
+            components.html(plot, height=500)
