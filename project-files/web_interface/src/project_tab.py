@@ -6,7 +6,7 @@ sys.dont_write_bytecode = True
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 sys.path.append(os.path.dirname(CURRENT_DIR))
-sys.path.append(CURRENT_DIR + "\components")
+sys.path.append(CURRENT_DIR + "/components/")
 
 from func_import import open_file
 import project_card
