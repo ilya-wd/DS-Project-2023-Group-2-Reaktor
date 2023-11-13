@@ -16,7 +16,6 @@ def render():
     st.subheader("Parastitic")
     components.html(
         open_file(f"./precomp_data/correlation/parasitic_bar.html")[1],
-        width=1400,
         height=500,
     )
     st.write(
@@ -26,7 +25,6 @@ def render():
     st.subheader("Predatory")
     components.html(
         open_file(f"./precomp_data/correlation/predatory_bar.html")[1],
-        width=1400,
         height=500,
     )
     st.write(
@@ -36,7 +34,6 @@ def render():
     st.subheader("Symbiotic")
     components.html(
         open_file(f"./precomp_data/correlation/symbiotic_bar.html")[1],
-        width=1400,
         height=500,
     )
     st.write(

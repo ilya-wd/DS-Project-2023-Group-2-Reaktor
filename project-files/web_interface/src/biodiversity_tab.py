@@ -34,7 +34,6 @@ def render():
     with col1:
         col1._html(
             open_file(f"./precomp_data/grid_map/grid_map_2000-{year}.html")[1],
-            width=1000,
             height=800,
         )
 
