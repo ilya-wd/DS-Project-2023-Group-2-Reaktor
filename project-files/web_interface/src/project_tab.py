@@ -1,18 +1,21 @@
 import streamlit as st
 import sys
+import os
 
 sys.dont_write_bytecode = True
-sys.path.insert(1, "../")
-from func_import import open_file
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-sys.path.insert(2, "./components/")
+sys.path.append(os.path.dirname(CURRENT_DIR))
+sys.path.append(CURRENT_DIR + "\components")
+
+from func_import import open_file
 import project_card
 
 
 def render():
     st.header("Project tab")
     project_card.render(
-        "../../../data/butterfly/gonepteryx1.csv",
+        f"{CURRENT_DIR}/../../../data/butterfly/gonepteryx1.csv",
         "Climate change and butterflies",
         "In the remote wilderness of the fictitious Silverwood Forest, a delicate balance unfolds as\
         wolves and sheep coexist in a delicate dance of survival. Recent observations suggest a surge\
@@ -25,7 +28,7 @@ def render():
         key=0,
     )
     project_card.render(
-        "../../../data/butterfly/gonepteryx1.csv",
+        f"{CURRENT_DIR}/../../../data/butterfly/gonepteryx1.csv",
         "Wolf and sheeps",
         "In the remote wilderness of the fictitious Silverwood Forest, a delicate balance unfolds as\
         wolves and sheep coexist in a delicate dance of survival. Recent observations suggest a surge\
@@ -39,7 +42,7 @@ def render():
     )
 
     project_card.render(
-        "../../../data/butterfly/gonepteryx1.csv",
+        f"{CURRENT_DIR}/../../../data/butterfly/gonepteryx1.csv",
         "Birds and insects",
         "Above lush meadows and vibrant flower fields, an enchanting aerial ballet unfolds as birds and insects \
         engage in a delicate choreography. Swirling flocks of birds gracefully navigate the open skies, while a \

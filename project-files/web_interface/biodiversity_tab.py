@@ -1,15 +1,10 @@
 import streamlit as st
 
 import sys
-import os
 
 sys.dont_write_bytecode = True
-CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.dirname(CURRENT_DIR))
+sys.path.append("../")
 from func_import import open_file
-from func_import import open_file
-
-sys.dont_write_bytecode = True
 
 
 def render():

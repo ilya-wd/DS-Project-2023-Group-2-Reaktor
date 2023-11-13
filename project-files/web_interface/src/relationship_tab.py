@@ -1,10 +1,14 @@
 import streamlit as st
+import streamlit.components.v1 as components
+
 import sys
+import os
 
 sys.dont_write_bytecode = True
-sys.path.insert(1, "../")
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(CURRENT_DIR))
 from func_import import open_file
-import streamlit.components.v1 as components
+from func_import import open_file
 
 
 def render():

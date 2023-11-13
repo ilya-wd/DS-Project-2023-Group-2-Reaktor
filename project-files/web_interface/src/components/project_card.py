@@ -1,11 +1,14 @@
 import streamlit as st
+import streamlit.components.v1 as components
 
 import sys
+import os
 
 sys.dont_write_bytecode = True
-sys.path.insert(1, "../")
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+sys.path.append(os.path.dirname(CURRENT_DIR) + "/../")
 from func_import import open_file
-import streamlit.components.v1 as components
 
 
 def render(file_path, title, text, plot, key, file_name: str = "download.csv"):
@@ -14,7 +17,7 @@ def render(file_path, title, text, plot, key, file_name: str = "download.csv"):
         col1.markdown(f"## {title}")
         col1.markdown(f"### Description")
 
-        with open(file_path, 'r', encoding='utf-8-sig') as file:
+        with open(file_path, "r", encoding="utf-8-sig") as file:
             col2.download_button(
                 label="Download data :open_file_folder:",
                 data=file,
@@ -34,7 +37,3 @@ def render(file_path, title, text, plot, key, file_name: str = "download.csv"):
             )
         else:
             components.html(plot, width=1340, height=500)
-
-
-if __name__ == "__main__":
-    render()
