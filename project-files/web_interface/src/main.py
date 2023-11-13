@@ -19,6 +19,11 @@ st.markdown(
         display: flex;
         justify-content: space-around;
     }
+
+    .stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {
+        font-size: 20px !important; 
+        font-weight: bold;
+    }
     </style>
     """,
     unsafe_allow_html=True,
