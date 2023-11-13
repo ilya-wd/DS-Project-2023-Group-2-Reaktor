@@ -14,6 +14,7 @@ sys.dont_write_bytecode = True
 
 def render():
     st.header("Biodiversity in Finland")
+    st.subheader("Biodiversity map")
     col1, col2 = st.columns([0.75, 0.25], gap="small")
     year = "2023"
     # name = "total"
@@ -54,6 +55,19 @@ def render():
             height=700,
         )
 
+    st.subheader("Keystone species")
+    st.markdown(
+        """
+        - Keystone species play a considerable role in maintaining the balance of the ecosystem. In Finland, there are several of them,
+        but we focus on the yellow-breasted buntings in this webpage since this species has gone extinct in Finland, thus the effect
+        of their disappearance can be studied.
+        - Yellow-breasted buntings breed in Europe and migrate to Asia during winter. There, they are illegally hunted for a special dish
+        and their number has decreased dramatically since 2004. Before that, they were listed as the 'Least Concerned', but, in just 10 years,
+        their status became 'Critically Endangered'. In Finland, this birds has officially gone extinct, not only due to the extensive hunting
+        but also because of the climate and habitat changes. Below, we study how the biodiversity changes according to the disappearance
+        of yellow-breasted bunting, therefore giving an example of how keystone species might affect the whole ecosystem.
+        """
+    )
 
 if __name__ == "__main__":
     render()

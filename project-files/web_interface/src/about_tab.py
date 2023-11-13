@@ -15,9 +15,9 @@ def render():
 
     text = """This info webpage studies the biodiversity of Finland by utilizing the observations obtained from laji.fi.
       In the Biodiversity tab, we present an overview interactive map indicating the observations of species
-      and the biodiversity indexes. The Correlation tab explores different relationships between species and
+      and the biodiversity indexes. The Relationships tab explores different relationships between species and
       presents prediction maps to inference the whole area observations from a small number of datapoints.
-      We also prepare some projects based on this webpage for educational purposes, which can be found in the Projects tab."""
+      We also prepare some projects based on this webpage for educational purposes, which can be found in the Project tab."""
     st.caption(text)
 
     st.subheader("Biodiversity")
@@ -26,8 +26,8 @@ def render():
       - We present the Finnish map made of hexagons whose area is 250 sqkm  to plot observations of different species.
       We use H3 library to achieve this type of map. The map can be zoomed in and out, and users can select a small part 
       of the map which then only shows the data for that part.
-      - We calculate two indexes in this webpage: Shannon index and Simpson index. Shannon index calculates the diversity
-      of species in a given community. The higher the index is, the more diverse the species are in that habitat. Simpson index
+      - We calculate two indexes in this webpage: Shannon index and Simpson index. Shannon index calculates the abundance of
+      different species in a given community. The higher the index is, the more diverse the species are in that habitat. Simpson index
       measures the probability of two randomly chosen individuals belonging to the same species in a given habitat. This index ranges
       from 0 to 1, with 0 being infinite diversity and 1 meaning that there is only one species in that area - zero diversity.
       - We also introduce keystones species, which are the important species that play a big role in the biodiversity of 
@@ -35,7 +35,7 @@ def render():
         """
     )
 
-    st.subheader("Correlation")
+    st.subheader("Relationships")
     st.markdown(
         """
         - There are different types of relationships between species: parasitic, symbiosis, and predatory. These correlations 
@@ -45,11 +45,11 @@ def render():
         """
     )
 
-    st.subheader("Projects")
+    st.subheader("Project")
     st.markdown(
         """
         For educational purposes, we also suggest some projects which can be achieved by utilizing our webpage information.
-        To see further details of available projects, please visit the Projects tab.  
+        To see further details of available projects, please visit the Project tab.  
         """
     )
 
