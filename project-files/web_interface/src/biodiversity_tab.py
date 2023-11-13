@@ -13,6 +13,16 @@ sys.dont_write_bytecode = True
 
 
 def render():
+    # st.markdown(
+    #     """
+    #     <style>
+    #     .stPlotlyChart {
+    #         max-width: 10vh !important;
+    #     }
+    #     </style>
+    #     """,
+    #     unsafe_allow_html=True,
+    # )
     st.header("Biodiversity in Finland")
     col1, col2 = st.columns([0.75, 0.25], gap="small")
     year = "2023"

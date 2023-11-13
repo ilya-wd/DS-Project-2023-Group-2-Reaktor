@@ -15,7 +15,6 @@ def render(file_path, title, text, plot, key, file_name: str = "download.csv"):
     with st.expander(title):
         col1, col2 = st.columns([0.88, 0.12])
         col1.markdown(f"## {title}")
-        col1.markdown(f"### Description")
 
         with open(file_path, "r", encoding="utf-8-sig") as file:
             col2.download_button(
@@ -26,7 +25,8 @@ def render(file_path, title, text, plot, key, file_name: str = "download.csv"):
             )
 
         st.markdown(text)
-        st.markdown("### Data exploration:")
+        st.markdown("### Data exploration")
+
         if title == "Climate change and butterflies":
             col1, col2 = st.columns([0.85, 0.25])
             year = str(col2.slider("Year slider", 2000, 2008, 2000))

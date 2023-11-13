@@ -17,13 +17,23 @@ def render():
     project_card.render(
         f"{CURRENT_DIR}/../../../data/butterfly/gonepteryx1.csv",
         "Climate change and butterflies",
-        "In the remote wilderness of the fictitious Silverwood Forest, a delicate balance unfolds as\
-        wolves and sheep coexist in a delicate dance of survival. Recent observations suggest a surge\
-        in wolf predation on the local sheep population, revealing the intricate interplay between predator \
-        and prey. Researchers are intrigued by the ecological dynamics at play, as the wolves demonstrate \
-        cunning strategies to secure their meals while the sheep adapt to the ever-present threat. This \
-        complex interaction raises questions about the broader impact on the ecosystem and underscores the \
-        perpetual struggle for survival in nature's unforgiving embrace.",
+        """
+        ### Description
+
+        In this assignment, you will explore a time series map visualization of Gonepteryx rhamni (a species 
+        of butterfly) observations and their potential connection to climate change. Your task is to analyze the 
+        map and draw conclusions about the changes in the location distribution over time. 
+
+        ### Instructions
+
+        - Spend some time exploring the map and drag the slider to see yearly changes in observations.
+        - Observe changes over time: Examine the maps for different years. Note any patterns or trends you observe. 
+        - Are there areas where you see changes in butterfly presence or shifts in their habitat? 
+        - Consider other factors influencing the observation map. Why is the map not an accurate description of the habitats of this species? 
+        - Given what you've observed and the current climate trends, try to predict how the location distribution 
+        might change in the future. Do you think the northward expansion will continue? Why or why not? 
+        - Why cannot Gonepteryx rhamni be found in the northernmost parts of Lapland? Consider the terrain factors.
+        """,
         open_file(f"./precomp_data/correlation/parasitic_bar.html")[1],
         key=0,
     )

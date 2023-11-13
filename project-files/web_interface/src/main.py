@@ -1,5 +1,6 @@
 import streamlit as st
 import sys
+
 sys.dont_write_bytecode = True
 
 import biodiversity_tab
@@ -8,6 +9,7 @@ import project_tab
 import about_tab
 
 st.set_page_config(layout="wide")
+
 st.title("Biology dashboard")
 
 st.markdown(
