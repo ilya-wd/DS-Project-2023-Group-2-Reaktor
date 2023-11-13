@@ -1,0 +1,12 @@
+In this assignment, you will explore a time series map visualization of Gonepteryx rhamni (a species of butterfly) observations and their potential connection to climate change. Your task is to analyze the map and draw conclusions about the changes in the location distribution over time. 
+
+Instructions:
+Spend some time exploring the map and drag the slider to see yearly changes in observations.
+
+Observe cahnges over time: Examine the maps for different years. Note any patterns or trends you observe. Are there areas where you see changes in butterfly presence or shifts in their habitat?
+
+Consider other factors influencing the observation map. Why is the map not an accurate description of the habitats of this species?
+
+Given what you've observed and the current climate trends, try to predict how the location distribution might change in the future. Do you think the northward expansion will continue? Why or why not?
+
+Why cannot Gonepteryx rhamni be found in the northernmost parts of Lapland? Consider the terrain factors.
