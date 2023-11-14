@@ -1,0 +1,53 @@
+
+
+```{r}
+df = read.csv("C://Users/dunga/species-dist-modeling/by_habitat/ranunculus.tsv", sep="\t")
+df
+```
+
+```{r}
+df = df[,c("Scientific.name", "WGS84.E", "WGS84.N")]
+colnames(df) = c("species", "longitude", "latitude")
+df
+```
+
+```{r}
+write.csv(df, "C://Users/dunga/species-dist-modeling/by_habitat/ranunculus-clean.csv", row.names = F)
+```
+
+```{r}
+library(dismo) # interface with MaxEnt
+library(raster) # spatial data manipulation
+library(MASS) # for 2D kernel density function
+library(magrittr) # for piping functionality, i.e., %>%
+library(maptools) # reading shapefiles
+library(rJava)
+``````
+
+
+```{r}
+elev = raster("C://Users/dunga/species-dist-modeling/env-rasters/wc2.1_5m_elev.tif")
+finland = readShapePoly("C://Users/dunga/Downloads/stanford-mb800bj2863-shapefile/mb800bj2863.shp")
+elev_finland = mask(elev, finland) %>% crop(finland)
+```
+
+```{r}
+png("C://Users/dunga/species-dist-modeling/plots/elev.png")
+plot(elev_finland, main="Elevation map of Finland")
+dev.off()
+
+```
+```{r}
+writeRaster(elev_finland, "C://Users/dunga/species-dist-modeling/env-rasters/elev.grd")
+```
+```{r}
+ranunculus = raster("C://Users/dunga/species-dist-modeling/by_habitat/out/Ranunculus_glacialis.asc")
+png("C://Users/dunga/species-dist-modeling/plots/ranunculus.png")
+plot(ranunculus, terrain.colors(255), main="Ranunculus glacialis")
+dev.off()
+```
+
+```{r}
+plot(raster("C://Users/dunga/species-dist-modeling/env-rasters/bio10.grd"))
+```
+
