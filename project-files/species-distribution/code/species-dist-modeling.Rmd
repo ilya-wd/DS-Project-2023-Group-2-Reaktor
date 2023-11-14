@@ -1,0 +1,84 @@
+---
+title: "Species distribution modeling"
+author: "anonymous"
+date: "2023-11-07"
+output: html_document
+---
+
+```{r}
+library(dismo) # interface with MaxEnt
+library(raster) # spatial data manipulation
+library(MASS) # for 2D kernel density function
+library(magrittr) # for piping functionality, i.e., %>%
+library(maptools) # reading shapefiles
+library(rJava)
+```
+
+
+
+```{r}
+df = read.csv("C://Users/dunga/Downloads/mammals.csv")
+df
+```
+
+```{r}
+df = df[,c("scientificName", "lon", "lat")]
+colnames(df) = c("species", "longitude", "latitude")
+df = na.omit(df)
+locations = df[,c("longitude", "latitude")]
+write.csv(df, file="C://Users/dunga/species-dist-modeling/mammals/mammals-2022-2023.csv")
+```
+
+```{r,warning=FALSE}
+bio = getData('worldclim', var='bio', res=5)
+climate = brick(bio)
+finland = readShapePoly("C://Users/dunga/Downloads/stanford-mb800bj2863-shapefile/mb800bj2863.shp")
+climate_finland = mask(climate, finland) %>% crop(finland)
+```
+
+```{r}
+locations_raster = rasterize(locations, climate, 1)
+locations_finland = mask(locations_raster, finland) %>% crop(finland)
+plot(locations_finland)
+```
+
+```{r}
+presences <- which(values(locations_finland) == 1)
+pres_locs <- coordinates(locations_finland)[presences, ]
+ 
+dens <- kde2d(pres_locs[,1], pres_locs[,2], n = c(nrow(locations_finland), ncol(locations_finland)))
+dens_raster <- raster(dens)
+plot(dens_raster)
+```
+
+```{r}
+dens_res = resample(dens_raster, climate_finland$bio1)
+plot(dens_res)
+```
+
+
+```{r}
+writeRaster(dens_res, "C://Users/dunga/species-dist-modeling/Bird_bias_file.grd", overwrite=TRUE)
+```
+
+
+```{r}
+for (i in 1:nlayers(climate_finland)) {
+  writeRaster(climate_finland[[i]], paste("C://Users/dunga/species-dist-modeling/env-rasters/bio",i,".grd",sep=""))
+}
+```
+
+```{r}
+species = unique(df$species)
+for (i in 1:length(species)) {
+  tryCatch({
+    df_species = df[df$species == species[i],]
+    write.csv(df_species, paste("C://Users/dunga/species-dist-modeling/in/", paste(strsplit(species[i],split=" ")[[1]],collapse="_"),".csv",sep=""), row.names = FALSE)
+  }, error=function(e){
+    print(e)
+  })
+}
+```
+
+
+
