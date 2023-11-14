@@ -38,16 +38,25 @@ def render():
         key=0,
     )
     project_card.render(
-        f"{CURRENT_DIR}/../../../data/butterfly/gonepteryx1.csv",
-        "Wolf and sheeps",
-        "In the remote wilderness of the fictitious Silverwood Forest, a delicate balance unfolds as\
-        wolves and sheep coexist in a delicate dance of survival. Recent observations suggest a surge\
-        in wolf predation on the local sheep population, revealing the intricate interplay between predator \
-        and prey. Researchers are intrigued by the ecological dynamics at play, as the wolves demonstrate \
-        cunning strategies to secure their meals while the sheep adapt to the ever-present threat. This \
-        complex interaction raises questions about the broader impact on the ecosystem and underscores the \
-        perpetual struggle for survival in nature's unforgiving embrace.",
-        open_file(f"./precomp_data/correlation/parasitic_bar.html")[1],
+        f"{CURRENT_DIR}/../precomp_data/projects/interrelation_data.csv",
+        "Interspecies dynamics",
+        """
+        ### Description
+
+        In this assignment, you will analyze interspecies dynamics between a mushroom (Cantharellus cibarius) 
+        and a tree (Pinus sylvestris). Your task is to check the graphs, maps, dataset provided, and external 
+        sources to explain what the relationship between two species.
+
+        ### Instructions
+
+        - First, check the relationships tab to learn more about relationships and how to read the visuals.
+        - Observe that in the map there is a clear dominance of some colours over others.
+        - Check the bar graph if the average number depends on coexistence or not.
+        - Check online to find more sources about the two species, their nutrition sources, and general behaviours to other species.
+        - You can download the dataset to make experiments on it to reveal more information.
+        - Form your analysis about the interspecies dynamics between the two species.
+        """,
+        open_file(f"./precomp_data/projects/interrelation_map.html")[1],
         key=1,
     )
 
