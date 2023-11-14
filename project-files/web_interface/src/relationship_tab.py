@@ -13,12 +13,13 @@ from func_import import open_file
 def render():
     st.header("Relationships")
     col1, col2 = st.columns([0.55, 0.45], gap="medium")
-    relationship = "Symbiotic"
+    relationship = "symbiotic"
     with col1:
         relationship = st.selectbox(
             "Relationship type", ["Symbiotic", "Predatory", "Parasitic"]
         )
-        if relationship == "Symbiotic":
+        relationship = relationship.lower()
+        if relationship == "symbiotic":
             st.markdown(
                 """
                         Symbiosis is a type of relationship between two different biological species where one specie gets benefit of other one to sustain its life, however, the specie that provides the benefits doesn't get affected by that.
@@ -27,7 +28,7 @@ def render():
                         """
             )
 
-        elif relationship == "Predatory":
+        elif relationship == "predatory":
             st.markdown(
                 """
                         In predatory relationships, one specie hunts and eats the other one. In this example case, we are looking to Aegolius funereus vs. Clethrionomys glareolus & Microtus agrestis, which are an owl and two moles that owl primarily hunts. 
@@ -50,13 +51,13 @@ def render():
             height=500,
         )
     with col2:
-        if relationship == "Symbiotic":
+        if relationship == "symbiotic":
             components.html(
                 open_file(f"./precomp_data/correlation/{relationship}_map.html")[1],
                 height=700,
             )
 
-        elif relationship == "Predatory":
+        elif relationship == "predatory":
             components.html(
                 open_file(f"./precomp_data/correlation/{relationship}_map.html")[1],
                 height=700,
