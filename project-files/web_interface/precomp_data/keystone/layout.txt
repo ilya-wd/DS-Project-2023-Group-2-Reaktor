@@ -1,0 +1,31 @@
+Title : Keystone Species
+
+Keystone species play a considerable role in maintaining the balance of the ecosystem. 
+In Finland, there are several of them, but we focus on the yellow-breasted buntings in this webpage.
+The effect of yellow-breasted bunting on the biodiversity of trees and birds.
+
+Yellow-breasted buntings breed in Europe and migrate to Asia during winter. 
+There, they are illegally hunted for a special dish and their number has decreased dramatically since 2004. 
+Before that, they were listed as the 'Least Concerned', but, in just 10 years, their status became 'Critically Endangered'. 
+In Finland, this birds has officially gone extinct, not only due to the extensive hunting but also because of the climate and habitat changes. 
+Below, we study how biodiversity of trees and birds changes according to the recorded observations of yellow-breasted bunting, 
+therefore giving an example of how keystone species might affect the ecosystem.
+
+We study areas that used to have recorded observations of yellow-breasted bunting. 
+In particular, we collect data of trees and birds in area with yellow-breasted bunting before, during, and after the time spans in which there were observations of yellow-breasted bunting.
+In the time periods before and after such time spans, data are collected in 3-years intervals. The average species richness of such areas during these time periods is calculated:
+
+![tree](tree_average_timeseries_bunting)
+![bird](bird_average_timeseries_bunting)
+
+It is visible that there was an increase in average biodiversity richness from the period before to after recorded observations of yellow-breasted bunting, 
+peaking at the time span of 1 to 3 years after last recorded observations. 
+In fact, the most statistically significant difference for both trees and birds data is between the period 1 to 3 years before and 1 to 3 years after recorded observations of yellow-breasted bunting,
+with higher than 95% confidence interval. The specific effect for each area is visualized as:
+
+![tree](tree_paired_bunting_effect)
+![bird](bird_paired_bunting_effect)
+
+On the other hand, the effect of the species' decline remains unclear for the inspected time period.
+However, such decline can be speculated to negatively affect species richness, as species richness reached a peak in time span of 1 to 3 years after last recorded observations despite the previous increasing trend.
+Noticeably, the species richness of trees even showed a downturn trend after reaching such peak.
