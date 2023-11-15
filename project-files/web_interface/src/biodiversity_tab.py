@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 
 import sys
@@ -17,7 +18,7 @@ def render():
     st.subheader("Biodiversity map")
     col1, col2 = st.columns([0.75, 0.25], gap="small")
     year = "2023"
-    # name = "total"
+    datatype = "Observations"
     with col2:
         st.subheader("Map controller")
         year = str(col2.slider("Year slider", 2000, 2023, 2023))
@@ -44,16 +45,32 @@ def render():
             unsafe_allow_html=True,
         )
 
-        name = col2.selectbox(
+        datatype = col2.selectbox(
             "Type of data",
-            ["Observations", "Species richness", "Other species richness"],
+            ["Observations", "Richness", "Simpson index", "Shannon entropy"],
         )
 
     with col1:
-        col1._html(
-            open_file(f"./precomp_data/grid_map/grid_map_2000-{year}.html")[1],
-            height=700,
-        )
+        if datatype == "Observations":
+            col1._html(
+                open_file(f"./precomp_data/grid_map/grid_map_2000-{year}.html")[1],
+                height=700,
+            )
+        elif datatype == "Richness":
+            col1._html(
+                open_file(f"./precomp_data/biodiversity_metrics/actual_dist/grid_richness_{year}.html")[1],
+                height=700,
+            )
+        elif datatype == "Simpson index":
+            col1._html(
+                open_file(f"./precomp_data/biodiversity_metrics/actual_dist/grid_simpson_{year}.html")[1],
+                height=700,
+            )
+        else:
+            col1._html(
+                open_file(f"./precomp_data/biodiversity_metrics/actual_dist/grid_shannon_{year}.html")[1],
+                height=700,
+            )
 
     st.subheader("Keystone species")
     st.markdown(
@@ -68,6 +85,8 @@ def render():
         of yellow-breasted bunting, therefore giving an example of how keystone species might affect the whole ecosystem.
         """
     )
+    components.html(open_file(f"./precomp_data/keystone/bird_paired_bunting_effect.html")[1], height=400)
+    components.html(open_file(f"./precomp_data/keystone/tree_paired_bunting_effect.html")[1], height=400)
 
 if __name__ == "__main__":
     render()
