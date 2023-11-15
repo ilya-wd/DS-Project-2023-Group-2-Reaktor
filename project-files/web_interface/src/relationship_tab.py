@@ -27,11 +27,11 @@ def render():
     relationship = "symbiotic"
     with filler_col1:
         relationship = st.selectbox(
-            "Relationship type", ["Symbiotic", "Predatory", "Parasitic"]
+            "Relationship type", ["Mutualistic", "Predatory", "Parasitic"]
         )
     col1, col2 = st.columns([0.55, 0.45], gap="medium")
     with col1:
-        relationship = relationship.lower()
+        relationship = "symbiotic" if relationship == "Mutualistic" else relationship.lower()
         if relationship == "symbiotic":
             st.markdown(
                 """

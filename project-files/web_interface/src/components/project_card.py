@@ -1,5 +1,6 @@
 import streamlit as st
 import streamlit.components.v1 as components
+from PIL import Image
 
 import sys
 import os
@@ -24,10 +25,9 @@ def render(file_path, title, text, plot, key, file_name: str = "download.csv"):
                 key=key,
             )
 
-        st.markdown(text)
-        st.markdown("### Data exploration")
-
         if title == "Climate change and butterflies":
+            st.markdown(text)
+            st.markdown("### Data exploration")
             col1, col2 = st.columns([0.85, 0.25])
             year = str(col2.slider("Year slider", 2000, 2008, 2000))
             col2.caption(f"Showing data from 2000 to {year}")
@@ -37,6 +37,8 @@ def render(file_path, title, text, plot, key, file_name: str = "download.csv"):
             )
 
         elif title == "Interspecies dynamics":
+            st.markdown(text)
+            st.markdown("### Data exploration")
             vis_type = st.radio(
                 "Visualizations", ["Map box", "Bar chart"], horizontal=True
             )
@@ -52,4 +54,38 @@ def render(file_path, title, text, plot, key, file_name: str = "download.csv"):
                 )
 
         else:
-            components.html(plot, height=500)
+            st.markdown("""
+            ### Description        
+            Habitat modeling attempts to predict the distribution of a species based on environmental data. Given the environmental conditions 
+            (temperature, precipitation, elevation, etc.) at one location, the model can predict the probability that the species is present at 
+            that location, or in other words, how suitable the environmental conditions are for the existence of that species.
+
+            Below is the distribution map of Ranunculus glacialis which we have obtained using habitat modeling.
+            """)
+
+            left_co, cent_co,last_co = st.columns(3)
+            with cent_co:
+                image = Image.open(f"{CURRENT_DIR}/../../precomp_data/species-distribution/plots/ranunculus.png")
+                st.image(image)
+            
+            st.markdown("""
+            The value in each (tiny) cell can be interpreted as the probability that the species is present in that cell.
+
+            Below is the elevation map of Finland.
+            """)
+            left_co, cent_co,last_co = st.columns(3)
+            with cent_co:
+                image = Image.open(f"{CURRENT_DIR}/../../precomp_data/species-distribution/plots/elev.png")
+                st.image(image)
+
+            st.markdown("""
+            ### Instructions
+                        
+            - What do you observe? Do you have any comments on the correlation between the distribution of Ranunculus glacialis and elevation?
+            - We can see that the distribution of Ranunculus glacialis has a strong positive correlation with elevation (i.e. the species is more likely to be present in areas with high elevation).         
+            """)
+            st.write("\n")
+
+
+            
+            
