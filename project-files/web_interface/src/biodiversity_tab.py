@@ -59,17 +59,23 @@ def render():
             )
         elif datatype == "Richness":
             col1._html(
-                open_file(f"./precomp_data/biodiversity_metrics/actual_dist/grid_richness_{year}.html")[1],
+                open_file(
+                    f"./precomp_data/biodiversity_metrics/actual_dist/grid_richness_{year}.html"
+                )[1],
                 height=700,
             )
         elif datatype == "Simpson index":
             col1._html(
-                open_file(f"./precomp_data/biodiversity_metrics/actual_dist/grid_simpson_{year}.html")[1],
+                open_file(
+                    f"./precomp_data/biodiversity_metrics/actual_dist/grid_simpson_{year}.html"
+                )[1],
                 height=700,
             )
         else:
             col1._html(
-                open_file(f"./precomp_data/biodiversity_metrics/actual_dist/grid_shannon_{year}.html")[1],
+                open_file(
+                    f"./precomp_data/biodiversity_metrics/actual_dist/grid_shannon_{year}.html"
+                )[1],
                 height=700,
             )
 
@@ -91,8 +97,14 @@ def render():
         In the time periods before and after such time spans, data are collected in 3-years intervals. The average species richness of such areas during these time periods is calculated:
         """
     )
-    components.html(open_file(f"./precomp_data/keystone/bird_paired_bunting_effect.html")[1], height=400)
-    components.html(open_file(f"./precomp_data/keystone/tree_paired_bunting_effect.html")[1], height=400)
+    components.html(
+        open_file(f"./precomp_data/keystone/bird_paired_bunting_effect.html")[1],
+        height=400,
+    )
+    components.html(
+        open_file(f"./precomp_data/keystone/tree_paired_bunting_effect.html")[1],
+        height=400,
+    )
     st.markdown(
         """
         It is visible that there was an increase in average biodiversity richness from the period before to after recorded observations of yellow-breasted bunting, 
@@ -102,8 +114,14 @@ def render():
         with higher than 95% confidence interval. The specific effect for each area is visualized as:
         """
     )
-    components.html(open_file(f"./precomp_data/keystone/bird_average_timeseries_bunting.html")[1], height=400)
-    components.html(open_file(f"./precomp_data/keystone/tree_average_timeseries_bunting.html")[1], height=400)
+    components.html(
+        open_file(f"./precomp_data/keystone/bird_average_timeseries_bunting.html")[1],
+        height=400,
+    )
+    components.html(
+        open_file(f"./precomp_data/keystone/tree_average_timeseries_bunting.html")[1],
+        height=400,
+    )
     st.markdown(
         """
         On the other hand, the effect of the species' decline remains unclear for the inspected time period.
@@ -133,11 +151,15 @@ def render():
 
     _, left_co, last_co, _ = st.columns([0.1, 0.4, 0.4, 0.1])
     with left_co:
-        image = Image.open(f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/birds_richness.png")
+        image = Image.open(
+            f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/birds_richness.png"
+        )
         st.image(image)
 
     with last_co:
-        image = Image.open(f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/birds_corr.png")
+        image = Image.open(
+            f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/birds_corr.png"
+        )
         st.image(image)
 
     st.markdown(
@@ -150,27 +172,51 @@ def render():
 
     _, left_co, mid_co, last_co, _ = st.columns([0.05, 0.3, 0.3, 0.3, 0.05])
     with left_co:
-        st.image(Image.open(f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio1.png"))
-        st.image(Image.open(f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio11.png"))
+        st.image(
+            Image.open(
+                f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio1.png"
+            )
+        )
+        st.image(
+            Image.open(
+                f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio11.png"
+            )
+        )
     with mid_co:
-        st.image(Image.open(f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio6.png"))
-        st.image(Image.open(f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio7.png"))
+        st.image(
+            Image.open(
+                f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio6.png"
+            )
+        )
+        st.image(
+            Image.open(
+                f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio7.png"
+            )
+        )
     with last_co:
-        st.image(Image.open(f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio9.png"))
+        st.image(
+            Image.open(
+                f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio9.png"
+            )
+        )
 
     st.markdown(
         """
         **2. Mammals results**
         """
-    )    
+    )
 
     _, left_co, last_co, _ = st.columns([0.1, 0.4, 0.4, 0.1])
     with left_co:
-        image = Image.open(f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/mammals_richness.png")
+        image = Image.open(
+            f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/mammals_richness.png"
+        )
         st.image(image)
 
     with last_co:
-        image = Image.open(f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/mammals_corr.png")
+        image = Image.open(
+            f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/mammals_corr.png"
+        )
         st.image(image)
 
     st.markdown(
@@ -184,12 +230,28 @@ def render():
 
     _, left_co, mid_co, last_co, _ = st.columns([0.05, 0.3, 0.3, 0.3, 0.05])
     with left_co:
-        st.image(Image.open(f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio1.png"))
-        st.image(Image.open(f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio7.png"))
+        st.image(
+            Image.open(
+                f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio1.png"
+            )
+        )
+        st.image(
+            Image.open(
+                f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio7.png"
+            )
+        )
     with mid_co:
-        st.image(Image.open(f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio6.png"))
+        st.image(
+            Image.open(
+                f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio6.png"
+            )
+        )
     with last_co:
-        st.image(Image.open(f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio9.png"))
+        st.image(
+            Image.open(
+                f"{CURRENT_DIR}/../precomp_data/species-distribution/plots/bio9.png"
+            )
+        )
 
     st.markdown(
         """
@@ -199,6 +261,7 @@ def render():
         - Species richness seems to be positively correlated with temperature and negatively correlated with the variation in temperature
         """
     )
+
 
 if __name__ == "__main__":
     render()
