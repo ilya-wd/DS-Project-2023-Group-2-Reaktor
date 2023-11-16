@@ -48,7 +48,7 @@ def render():
 
         datatype = col2.selectbox(
             "Type of data",
-            ["Observations", "Richness", "Simpson index", "Shannon entropy"],
+            ["Simpson index", "Shannon entropy", "Richness", "Observations"],
         )
 
     with col1:
@@ -98,13 +98,14 @@ def render():
         """
     )
     components.html(
-        open_file(f"./precomp_data/keystone/bird_paired_bunting_effect.html")[1],
+        open_file(f"./precomp_data/keystone/bird_average_timeseries_bunting.html")[1],
         height=400,
     )
     components.html(
-        open_file(f"./precomp_data/keystone/tree_paired_bunting_effect.html")[1],
+        open_file(f"./precomp_data/keystone/tree_average_timeseries_bunting.html")[1],
         height=400,
     )
+    
     st.markdown(
         """
         It is visible that there was an increase in average biodiversity richness from the period before to after recorded observations of yellow-breasted bunting, 
@@ -115,11 +116,11 @@ def render():
         """
     )
     components.html(
-        open_file(f"./precomp_data/keystone/bird_average_timeseries_bunting.html")[1],
+        open_file(f"./precomp_data/keystone/bird_paired_bunting_effect.html")[1],
         height=400,
     )
     components.html(
-        open_file(f"./precomp_data/keystone/tree_average_timeseries_bunting.html")[1],
+        open_file(f"./precomp_data/keystone/tree_paired_bunting_effect.html")[1],
         height=400,
     )
     st.markdown(

@@ -37,8 +37,8 @@ def render():
     st.subheader("Relationships")
     st.markdown(
         """
-        There are different types of relationships between species: parasitic, symbiosis, and predatory. These correlations 
-        are discussed in more detail in Correlation tab. We estimate these relationships based on the count of species in a given area.
+        There are different types of relationships between species: mutualistic, symbiosis, and predatory. These correlations 
+        are discussed in more detail in Relationship tab. We estimate these relationships based on the count of species in a given area.
         """
     )
 
