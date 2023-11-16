@@ -31,13 +31,15 @@ def render():
         )
     col1, col2 = st.columns([0.55, 0.45], gap="medium")
     with col1:
-        relationship = "symbiotic" if relationship == "Mutualistic" else relationship.lower()
+        relationship = (
+            "symbiotic" if relationship == "Mutualistic" else relationship.lower()
+        )
         if relationship == "symbiotic":
             st.markdown(
                 """
-                #### [Mutualistic](https://www.britannica.com/science/mutualism-biology)
+                #### Mutualistic
 
-                A mutualistic relationship between organisms of two different species benefits both species.
+                A [mutualistic relationship](https://www.britannica.com/science/mutualism-biology) between organisms of two different species benefits both species.
 
                 The map on the right showcases the habitats of the fly agaric mushroom (_Amanita muscaria_) and the baltic pine tree (_Pinus sylvestris_). Their mutualistic relationship can be observed from the map: the fly agaric essentially only exists in areas in which the baltic pine does as well. In this case, the pine can be observed in many areas by itself, since it has mutualistic relationships with other mushrooms in addition to the fly agaric.
 
@@ -48,9 +50,9 @@ def render():
         elif relationship == "predatory":
             st.markdown(
                 """
-                #### [Predatory](https://www.britannica.com/science/predation)
+                #### Predatory
 
-                A predatory relationship between two animal species places the predator to hunt the pray for food. 
+                A [predatory relationship](https://www.britannica.com/science/predation) between two animal species places the predator to hunt the pray for food. 
 
                 The map on the right showcases the habitats of the boreal owl (_Aegolius funereus_), and two rodents it hunts: the bank vole (_Clethrionomys glareolus_) and the field vole (_Microtus agrestis_). The voles' habitats are combined in the map. Their predatory relationship can be observed from the map: the boreal owl can be observed essentially everywhere the voles do as well. In this case, the owl can be observed in many areas by itself, since it has predatory relationships with other species in addition to the voles.
                 
@@ -61,9 +63,9 @@ def render():
         else:
             st.markdown(
                 """
-                #### [Parasitic](https://www.britannica.com/science/parasitism)
+                #### Parasitic
 
-                A parasitic relationship between organisms of two different species benefits one species on the expense of the other, though sometimes without killing the host organism. 
+                A [parasitic relationship](https://www.britannica.com/science/parasitism) between organisms of two different species benefits one species on the expense of the other, though sometimes without killing the host organism. 
 
                 The map on the right showcases the habitats of the downy birch (_Betula pubescens_) and the witches broom fungus (_Taphrina betulina_). Their parasitic relationship can be observed from the map: the fungus essentially only exists in areas in which the birch does as well, as it is dependent on the birch to live. Since the birch is not dependent on the fungus, it can also be observed in other areas by itself.
                 
