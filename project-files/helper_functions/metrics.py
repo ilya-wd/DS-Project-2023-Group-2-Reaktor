@@ -11,7 +11,7 @@ def calculate_shannon_entropy (row):
 
 def calculate_simpson_index (row):
     probabilities = row.to_numpy()
-    return np.sum(probabilities * probabilities)
+    return 1 - np.sum(probabilities * probabilities)
 
 def generate_richness_frame (df):
     richness = df.apply(calculate_species_richness, axis = 1)
