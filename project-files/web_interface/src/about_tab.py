@@ -14,8 +14,7 @@ def render():
 
     text = """This info webpage studies the biodiversity of Finland by utilizing the observations obtained from laji.fi.
       In the Biodiversity tab, we present an overview interactive map indicating the observations of species
-      and the biodiversity indexes. The Relationships tab explores different relationships between species and
-      presents prediction maps to inference the whole area observations from a small number of datapoints.
+      and the biodiversity indexes. The Relationships tab explores different relationships between species.
       We also prepare some projects based on this webpage for educational purposes, which can be found in the Project tab."""
     st.caption(text)
 
