@@ -7,7 +7,6 @@ sys.dont_write_bytecode = True
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(CURRENT_DIR))
 from func_import import open_file
-from func_import import open_file
 
 
 def render():
@@ -30,16 +29,18 @@ def render():
       different species in a given community. The higher the index is, the more diverse the species are in that habitat. Simpson index
       measures the probability of two randomly chosen individuals belonging to the same species in a given habitat. This index ranges
       from 0 to 1, with 0 being infinite diversity and 1 meaning that there is only one species in that area - zero diversity.
-      - We also introduce keystones species, which are the important species that play a big role in the biodiversity of 
+      - We introduce keystones species, which are the important species that play a big role in the biodiversity of 
       some habitats and their disappearance might have enormous consequences.
+      - We also study the effect of different environmental factors on the biodiversity. The biodiversity is modelled according to
+      a total of 19 environment variables.
         """
     )
 
     st.subheader("Relationships")
     st.markdown(
         """
-        There are different types of relationships between species: parasitic, symbiosis, and predatory. These correlations 
-        are discussed in more detail in Correlation tab. We estimate these relationships based on the count of species in a given area.
+        There are different types of relationships between species: mutualistic, symbiosis, and predatory. They 
+        are discussed in more detail in Relationship tab. We estimate these relationships based on the count of species in a given area.
         """
     )
 

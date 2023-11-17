@@ -61,14 +61,11 @@ def render():
     )
 
     project_card.render(
-        f"{CURRENT_DIR}/../../../data/butterfly/gonepteryx1.csv",
-        "Birds and insects",
-        "Above lush meadows and vibrant flower fields, an enchanting aerial ballet unfolds as birds and insects \
-        engage in a delicate choreography. Swirling flocks of birds gracefully navigate the open skies, while a \
-        myriad of colorful insects flit and flutter amongst blooming blossoms. This symbiotic relationship between \
-        birds and insects is a testament to the intricate balance of nature, with birds benefiting from the insect \
-        buffet and insects finding safety in the company of their avian allies. The vibrant tapestry of airborne life \
-        highlights the essential role these creatures play in maintaining the health and biodiversity of our ecosystems.",
+        f"{CURRENT_DIR}/../../../data/env-vars/ranunculus-clean.csv",
+        "Habitat modelling",
+        """
+        
+        """,
         open_file(f"./precomp_data/correlation/predatory_bar.html")[1],
         key=2,
     )

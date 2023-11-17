@@ -5,6 +5,9 @@ from shapely.geometry import Polygon
 import h3
 from geojson import Feature, Point, FeatureCollection
 import os
+import sys
+
+sys.dont_write_bytecode = True
 
 
 def open_file(file_name):
