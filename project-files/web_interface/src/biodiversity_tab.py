@@ -88,8 +88,8 @@ def render():
 
         Yellow-breasted buntings breed in Europe and migrate to Asia during winter. There, they are illegally hunted for a special dish
         and their number has decreased dramatically since 2004. Before that, they were listed as the 'Least Concerned', but, in just 10 years,
-        their status became 'Critically Endangered'. In Finland, this birds has officially gone extinct, not only due to the extensive hunting
-        but also because of the climate and habitat changes. Below, we study how the biodiversity changes according to the disappearance
+        their status became 'Critically Endangered'. In Finland, this bird has officially gone extinct, not only due to the extensive hunting
+        but also because of the climate and habitat changes. Below, we study how the biodiversity changes according to the appearance
         of yellow-breasted bunting, therefore giving an example of how keystone species might affect the whole ecosystem.
 
         We study areas that used to have recorded observations of yellow-breasted bunting. 
@@ -97,6 +97,10 @@ def render():
         In the time periods before and after such time spans, data are collected in 3-years intervals. The average species richness of such areas during these time periods is calculated:
         """
     )
+    _, mid_co, _ = st.columns(3)
+    with mid_co:
+        image = Image.open("project-files/web_interface/birds.png")
+        st.image(image, caption='Yellow-breasted bunting birds')
     components.html(
         open_file(f"./precomp_data/keystone/bird_average_timeseries_bunting.html")[1],
         height=400,
