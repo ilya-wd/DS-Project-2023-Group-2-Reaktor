@@ -75,7 +75,7 @@ def render():
 
         components.html(
             open_file(f"./precomp_data/correlation/{relationship}_bar.html")[1],
-            height=400,
+            height=450,
         )
     with col2:
         if relationship == "symbiotic":
