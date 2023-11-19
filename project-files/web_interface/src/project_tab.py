@@ -62,7 +62,7 @@ def render():
 
     project_card.render(
         f"{CURRENT_DIR}/../../../data/env-vars/ranunculus-clean.csv",
-        "Habitat modelling",
+        "Modeling the habitat requirements of flowers",
         """
         
         """,

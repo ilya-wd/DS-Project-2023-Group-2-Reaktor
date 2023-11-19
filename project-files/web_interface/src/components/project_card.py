@@ -56,11 +56,9 @@ def render(file_path, title, text, plot, key, file_name: str = "download.csv"):
         else:
             st.markdown("""
             ### Description        
-            Habitat modeling attempts to predict the distribution of a species based on environmental data. Given the environmental conditions 
-            (temperature, precipitation, elevation, etc.) at one location, the model can predict the probability that the species is present at 
-            that location, or in other words, how suitable the environmental conditions are for the existence of that species.
+            Habitat modeling attempts to predict the distribution of a species based on environmental data. Given the environmental conditions (temperature, precipitation, elevation, etc.) at one location, the model can predict the probability that the species is present at that location, or in other words, how suitable the environmental conditions are for the existence of that species.
 
-            Below is the distribution map of Ranunculus glacialis which we have obtained using habitat modeling.
+            We modeled the distribution of *Ranunculus glacialis* in Finland based on elevation, annual mean temperature, and annual precipitation, and obtained the following map:
             """)
 
             left_co, cent_co,last_co = st.columns(3)
@@ -71,18 +69,29 @@ def render(file_path, title, text, plot, key, file_name: str = "download.csv"):
             st.markdown("""
             The value in each (tiny) cell can be interpreted as the probability that the species is present in that cell.
 
-            Below is the elevation map of Finland.
+            Below are the maps of the 3 environmental variables.
             """)
-            left_co, cent_co,last_co = st.columns(3)
-            with cent_co:
+            _, left_co, mid_co, last_co, _ = st.columns([0.05, 0.3, 0.3, 0.3, 0.05])
+            with left_co:
                 image = Image.open(f"{CURRENT_DIR}/../../precomp_data/species-distribution/plots/elev.png")
+                st.image(image)
+            with mid_co:
+                image = Image.open(f"{CURRENT_DIR}/../../precomp_data/species-distribution/plots/temperature.png")
+                st.image(image)
+            with last_co:
+                image = Image.open(f"{CURRENT_DIR}/../../precomp_data/species-distribution/plots/precipitation.png")
                 st.image(image)
 
             st.markdown("""
             ### Instructions
                         
-            - What do you observe? Do you have any comments on the correlation between the distribution of Ranunculus glacialis and elevation?
-            - We can see that the distribution of Ranunculus glacialis has a strong positive correlation with elevation (i.e. the species is more likely to be present in areas with high elevation).         
+            Observe the maps. Do you have any comments on the relationship between the distribution of *Ranunculus glacialis* and 
+            the 3 environmental variables? Can you state the relative value (high/moderate/low) of each environmental 
+            variable that would likely permit the existence of *Ranunculus glacialis*? Based on your observations, which 
+            variable would you think best explains the distribution of *Ranunculus glacialis*?
+
+            We can see that the distribution of *Ranunculus glacialis* has a strong positive correlation with elevation 
+            (i.e., the species is more likely to be present in areas with high elevation).
             """)
             st.write("\n")
 
