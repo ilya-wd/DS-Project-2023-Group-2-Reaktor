@@ -1,5 +1,5 @@
 ---
-abstract: |
+Abstract: |
   Science education has benefited greatly from advances in technology:
   the availability and accessibility of information has increased, and
   pedagogical methods evolved. Teachers are able to demonstrate the
@@ -25,12 +25,6 @@ abstract: |
 
   <https://biodiversity.streamlit.app/>
 ---
-
-::: titlepage
-[Aalto University]{.smallcaps}\
-![image](aaltologo.png)\
-[Data Science Project]{.smallcaps}\
-[CS-C3250]{.smallcaps}\
 
 ------------------------------------------------------------------------
 
