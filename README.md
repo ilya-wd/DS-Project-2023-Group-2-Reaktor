@@ -6,4 +6,5 @@ This project was assigned by representatives of Reaktor as an exercise in workin
 *Team members:* Aaron, Behram, Chau, Hung, Ilya, Kerkko, Linh, Nghi
 
 [**Web Demo**](https://biodiversity.streamlit.app/)
+
 [**Full report**](https://github.com/ilya-wd/DS-Project-2023-Group-2-Reaktor/blob/main/report/report.pdf)
