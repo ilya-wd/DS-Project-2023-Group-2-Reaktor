@@ -1,5 +1,5 @@
 ---
-Abstract: |
+abstract: |
   Science education has benefited greatly from advances in technology:
   the availability and accessibility of information has increased, and
   pedagogical methods evolved. Teachers are able to demonstrate the
@@ -23,18 +23,37 @@ Abstract: |
   associated with the Data Science Project course at Aalto University
   and conducted in collaboration with Reaktor.
 
-  <h1 align="center">Interactive Biodiversity Infographics</h1>
-  https://biodiversity.streamlit.app/
+  <https://biodiversity.streamlit.app/>
 ---
 
+::: titlepage
+[Aalto University]{.smallcaps}\
+![image](aaltologo.png)\
+[Data Science Project]{.smallcaps}\
+[CS-C3250]{.smallcaps}\
 
+------------------------------------------------------------------------
 
-<h1 align="center">Interactive Biodiversity Infographics</h1>
+\
+**Interactive Biodiversity Infographics**\
 
+------------------------------------------------------------------------
+
+\
 
 *Authors:*\
-Aaron, Behram, Chau, Hung, Ilya, Kerkko, Linh, Nghi
+Aaron\
+Behram\
+Chau\
+Hung\
+Ilya\
+Kerkko\
+Linh\
+Nghi\
 
+\
+1970-01-01\
+:::
 
 # About the project
 
